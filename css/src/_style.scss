@@ -1,0 +1,63 @@
+// Intro Screen -------------------
+#intro-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+    .row {
+        @extend %fill;
+    }
+    [class*="col"] {
+        min-height: 50%;
+    }
+    .intro-img {
+        background: linear-gradient($ltPink, $pink, $red);
+    }
+    .intro-container {
+        background-color: $offWhite;
+        @extend %flex-col;
+        @extend %flex-center;
+    }
+}
+
+// Game Screen -------------------
+#game-screen {
+    height: 100vh;
+    width: 100vw;
+    background: $ltYellow;
+}
+.game-grid {
+    display: grid;
+    perspective: 1000px;
+}
+.cart {
+    margin: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 150px;
+    width: 150px;
+    transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+    .back, .front {
+        @extend %fill;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .back {
+        background-color: $grey;
+        z-index: 2;
+    }
+    .front {
+        background-color: $dkAqua;
+        transform: rotateY(180deg);
+    }
+    &:hover {
+        transform: rotateY(180deg);
+    }
+}

@@ -79,18 +79,64 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-body {
-  background-color: lavenderblush;
-  padding: 50px; }
-  body main {
-    background-color: blue;
-    color: white;
-    padding: 20px;
-    max-width: 800px; }
-    body main p {
-      font-size: 1rem;
-      color: yellow;
-      color: red; }
+#intro-screen .row, .cart .back, .cart .front {
+  height: 100%;
+  width: 100%; }
+
+#intro-screen .intro-container {
+  display: flex;
+  flex-direction: column; }
+
+#intro-screen .intro-container {
+  justify-content: center;
+  align-items: center; }
+
+#intro-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 5; }
+  #intro-screen [class*="col"] {
+    min-height: 50%; }
+  #intro-screen .intro-img {
+    background: linear-gradient(#f4dacd, #f67a82, #f24446); }
+  #intro-screen .intro-container {
+    background-color: #fbfaf5; }
+
+#game-screen {
+  height: 100vh;
+  width: 100vw;
+  background: #fff9b1; }
+
+.game-grid {
+  display: grid;
+  perspective: 1000px; }
+
+.cart {
+  margin: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 150px;
+  width: 150px;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative; }
+  .cart .back, .cart .front {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .cart .back {
+    background-color: #d8d4cb;
+    z-index: 2; }
+  .cart .front {
+    background-color: #338c81;
+    transform: rotateY(180deg); }
+  .cart:hover {
+    transform: rotateY(180deg); }
 
 /* ==========================================================================
    Helper classes

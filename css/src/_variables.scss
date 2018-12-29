@@ -1,0 +1,24 @@
+$grey: #d8d4cb;
+$offWhite: #fbfaf5;
+$ltPink: #f4dacd;
+$pink: #f67a82;
+$red: #f24446;
+$ltYellow: #fff9b1;
+$yellow: #ffee00;
+$ltBlue: d7dff2;
+$dkBlue: #3a4eb1;
+$dkAqua: #338c81;
+$aqua: #55c3ba;
+
+%fill {
+    height: 100%;
+    width: 100%;
+}
+%flex-col {
+    display: flex;
+    flex-direction: column;
+}
+%flex-center {
+    justify-content: center;
+    align-items: center;
+}
