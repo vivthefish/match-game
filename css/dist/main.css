@@ -111,16 +111,18 @@ textarea {
   background: #fff9b1; }
 
 .game-grid {
-  display: grid;
-  perspective: 1000px; }
+  width: 100%;
+  perspective: 1000px;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; }
 
 .cart {
-  margin: 5px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
   height: 150px;
   width: 150px;
+  margin: 5px;
   transition: 0.6s;
   transform-style: preserve-3d;
   position: relative; }
@@ -128,15 +130,19 @@ textarea {
     backface-visibility: hidden;
     position: absolute;
     top: 0;
-    left: 0; }
+    left: 0;
+    border-radius: 5px; }
   .cart .back {
-    background-color: #d8d4cb;
+    background-color: darkslategrey;
     z-index: 2; }
   .cart .front {
-    background-color: #338c81;
     transform: rotateY(180deg); }
+  .cart.selected {
+    transform: rotateY(180deg); }
+  .cart.match {
+    opacity: 0; }
   .cart:hover {
-    transform: rotateY(180deg); }
+    cursor: pointer; }
 
 /* ==========================================================================
    Helper classes

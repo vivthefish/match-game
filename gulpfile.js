@@ -22,6 +22,11 @@ gulp.task('html', function(done) {
     .pipe(connect.reload());
   done();
 })
+gulp.task('js', function(done) {
+  gulp.src('js/*')
+    .pipe(connect.reload());
+  done();
+})
 
 // --- Sass Task ---
 gulp.task("sass", function () {
@@ -34,6 +39,7 @@ gulp.task("sass", function () {
 // --- Watch Task ---
 gulp.task("watch", function() {
   // copy the following line to watch additional files
+  gulp.watch('js/*', gulp.series('js'));
   gulp.watch('*.html', gulp.series('html'));
   gulp.watch(cssSrc, gulp.series('sass'));
   gulp.watch('css/src/*', gulp.series('sass'));
