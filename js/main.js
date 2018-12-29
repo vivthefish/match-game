@@ -65,25 +65,18 @@ let vm = new Vue({
     el: "#app",
     data: {
         gameGrid: document.querySelector('.game-grid'),
-        dupCards: cardsArray.concat(cardsArray),
+        dupCards: undefined,
         count: 0,
         firstGuess: '',
         secondGuess: '',
         previousTarget: null,
         delay: 1000,
+        output: undefined,
     },
     created() {
         // mix up array
-        this.dupCards.sort(() => 0.5 - Math.random());
-        // map cards array
-        const output = this.dupCards.map( (x, index) => `
-        <div class="cart" data-name="${x.name}" >
-        <div class="back"></div>
-        <div class="front" style="background: ${x.img}" ></div>
-        </div>`).join("");
-
-        // Set gamegrid inner HTML
-        this.gameGrid.innerHTML = output;
+        this.dupCards = this.shuffle(cardsArray.concat(cardsArray));
+        this.render();
     },
     methods: {
         shuffle(array) {
@@ -150,19 +143,18 @@ let vm = new Vue({
                 x.classList.remove('match');
             });
 
-            console.log(this.dupCards);
             // mix up array
             this.dupCards = this.shuffle(this.dupCards);
-            console.log(this.dupCards);
+            // rerender
+            this.render();
+        },
+        render() {
             // map cards array
-            // const output = this.dupCards.map( (x, index) => `
-            // <div class="cart" data-name="${x.name}" >
-            // <div class="back"></div>
-            // <div class="front" style="background: ${x.img}" ></div>
-            // </div>`).join("");
-
-            // // Set gamegrid inner HTML
-            // this.gameGrid.innerHTML = output;
+            this.output = this.dupCards.map( (x, index) => `
+            <div class="cart" data-name="${this.dupCards[index].name}" >
+            <div class="back"></div>
+            <div class="front" style="background: ${this.dupCards[index].img}" ></div>
+            </div>`).join("");
         }
     }
 });
