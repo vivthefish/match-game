@@ -72,6 +72,12 @@ let vm = new Vue({
         previousTarget: null,
         delay: 1000,
         output: undefined,
+        time: '00:00',
+        ms: 0,
+        sec: 0,
+        min: 0,
+        t: undefined,
+        timeStart: false,
     },
     created() {
         // mix up array
@@ -79,10 +85,46 @@ let vm = new Vue({
         this.render();
     },
     methods: {
+        add() {
+            this.ms++;
+            if (this.ms >= 100) {
+                this.ms = 0;
+                this.sec++;
+                if (this.sec >= 60) {
+                    this.sec = 0;
+                    this.min++;
+                }
+            }
+            this.time = `
+                ${(this.min ? (this.min > 9 ? this.min : "0" + this.min) : "00")}:${(this.sec ? (this.sec > 9 ? this.sec : "0" + this.sec) : "00")}
+            `
+            // to add ms: (this.ms > 9 ? this.ms : "0" + this.ms)
+            this.timer();
+        },
+        timer() {
+            //this.t = setTimeout(add, 10);
+            this.t = setTimeout(()=>{ vm.add() }, 10);
+        },
+        stopTime() {
+            clearTimeout(vm.t);
+            this.timeStart = false;
+        },
+        clearTime() {
+            this.time = "00:00";
+            this.ms = 0;
+            this.sec = 0;
+            this.min = 0;
+        },
         shuffle(array) {
             return _.shuffle(array);
         }, 
         clickCard(e) {
+            // start timer for first pick
+            if(!this.timeStart){
+                this.timeStart = true;
+                this.timer();
+            }
+
             // The event target is our clicked item
             let clicked = e.target.parentNode;
 
@@ -109,6 +151,14 @@ let vm = new Vue({
                         //vm.match();
                         //vm.reset();
                         setTimeout(()=>{ vm.reset() }, vm.delay+800);
+
+                        let unmatched = document.querySelectorAll('.cart:not(.match)');
+                        console.log(unmatched.length);
+                        //console.log(unmatched);
+                        if(unmatched.length<3) {
+                            console.log('you won');
+                        }
+
                     } else {
                         setTimeout(()=>{ vm.reset() }, vm.delay);
                     }
@@ -116,6 +166,7 @@ let vm = new Vue({
                 // Set previous target to clicked  
                 this.previousTarget = clicked;
               }
+            
         },
         // Add match CSS
         match() {

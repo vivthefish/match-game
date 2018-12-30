@@ -44,7 +44,7 @@
               <img src="https://via.placeholder.com/150" alt="">
               <h1>Wasabi Match</h1>
               <h2>Created by VivtheFish</h2>
-              <p>Can you find all the matching cards before the time runs out?</p>
+              <p>How fast can you find all the matching cards?</p>
               <button class="btn btn-start">Start</button>
             </div>
           </section>
@@ -60,6 +60,9 @@
 
         <div class="game-misc">
           <button @click="resetGame" >Reset</button>
+          <h2>{{ time }}</h2>
+          <button @click="stopTime" >Stop Time</button>
+          <button @click="clearTime" >clear Time</button>
         </div><!--.game-music-->
 
         <section @click="clickCard" class="game-grid" v-html="output">
