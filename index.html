@@ -33,21 +33,25 @@
 
 
 
-      
-      <div id="intro-screen" class="d-none">
-        <div class="row m-0">
-          <section class="col-md intro-img">
 
-          </section>
-          <section class="col-md intro-container">
-            <div class="p-3 text-center">
-              <img src="https://via.placeholder.com/150" alt="">
-              <h1>Wasabi Match</h1>
-              <h2>Created by VivtheFish</h2>
-              <p>How fast can you find all the matching cards?</p>
-              <button class="btn btn-start">Start</button>
-            </div>
-          </section>
+      <div id="intro-screen">
+        <div class="row m-0">
+          <transition name="intro-left" appear  v-on:after-leave="afterIntro">
+            <section v-if="!started" class="col-md intro-img">
+
+            </section>
+          </transition>
+          <transition name="intro-right" appear>
+            <section v-if="!started" class="col-md intro-container">
+              <div class="p-3 text-center">
+                <img src="https://via.placeholder.com/150" alt="">
+                <h1>Wasabi Match</h1>
+                <h2>Created by VivtheFish</h2>
+                <p>How fast can you find all the matching cards?</p>
+                <button class="btn btn-start" @click="started = !started" >Start</button>
+              </div>
+            </section>
+          </transition>
         </div>
       </div><!--#intro-screen-->
 
@@ -56,25 +60,26 @@
 
 
 
+
       <section id="game-screen">
+        <div v-if="started" id="game-container">
+          <div class="game-misc">
+            <button @click="resetGame" >Reset</button>
+            <h2>{{ time }}</h2>
+            <button @click="stopTime" >Stop Time</button>
+            <button @click="clearTime" >clear Time</button>
+          </div><!--.game-music-->
 
-        <div class="game-misc">
-          <button @click="resetGame" >Reset</button>
-          <h2>{{ time }}</h2>
-          <button @click="stopTime" >Stop Time</button>
-          <button @click="clearTime" >clear Time</button>
-        </div><!--.game-music-->
+          <section @click="clickCard" class="game-grid" v-html="output">
 
-        <section @click="clickCard" class="game-grid" v-html="output">
+            <!-- <div class="cart">
+              <div class="back"></div>
+              <div class="front"></div>
+            </div> -->
 
-          <!-- <div class="cart">
-            <div class="back"></div>
-            <div class="front"></div>
-          </div> -->
+          </section><!--.game-grid-->
 
-        </section><!--.game-grid-->
-
-
+        </div><!--#game-container-->
       </section><!--#game-screen-->
     </div><!--#app-->
   </main>

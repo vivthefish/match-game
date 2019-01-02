@@ -91,6 +91,30 @@ textarea {
   justify-content: center;
   align-items: center; }
 
+.intro-left-enter,
+.intro-left-leave-to {
+  top: -100%; }
+
+.intro-left-enter-active, .intro-left-leave-active {
+  transition: all .5s ease;
+  position: relative; }
+
+.intro-left-enter-to,
+.intro-left-leave {
+  top: 0; }
+
+.intro-right-enter,
+.intro-right-leave-to {
+  bottom: -100%; }
+
+.intro-right-enter-active, .intro-right-leave-active {
+  transition: all .5s ease;
+  position: relative; }
+
+.intro-right-enter-to,
+.intro-right-leave {
+  bottom: 0; }
+
 #intro-screen {
   position: absolute;
   top: 0;

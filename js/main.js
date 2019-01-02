@@ -64,6 +64,7 @@ const cardsArray = [
 let vm = new Vue({
     el: "#app",
     data: {
+        started: false,
         gameGrid: document.querySelector('.game-grid'),
         dupCards: undefined,
         count: 0,
@@ -85,6 +86,10 @@ let vm = new Vue({
         this.render();
     },
     methods: {
+        // hide intro screen once they start the game
+        afterIntro: function (el) {
+            document.querySelector('#intro-screen').classList.add('d-none');
+        },
         add() {
             this.ms++;
             if (this.ms >= 100) {
