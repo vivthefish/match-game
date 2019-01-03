@@ -1,5 +1,8 @@
 // General Styles -----------------
-h1, h2, h3, h4, h5, h6 {
+[v-clock] {
+    display: none;
+}
+h1 {
     font-family: $ceviche;
     color: $dkAqua;
 } 
@@ -65,9 +68,54 @@ body, .subheading {
 
 // Game Screen -------------------
 #game-screen {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    background: $ltYellow;
+    background: url('../../img/diamond-upholstery.png'), linear-gradient($ltPink, $pink, $red);
+    display: flex;
+    align-items: center;
+    .wasabi-bounce {
+        width: 100px;
+        margin: -30px 0 -20px 0;
+        @media (min-width: 576px) {
+            width: auto;
+            margin: 0;
+        }
+    }
+}
+#game-container {
+    background: $offWhite;
+    //min-height: 100vh;
+    box-shadow: 0 0 40px 0 rgba(49, 0, 0, 0.3);
+    @media (min-width: 576px) {
+        min-height: 100vh;
+    }
+}
+.game-misc {
+    width: 100%;
+    max-width: 960px;
+    //margin: 0 auto;
+    .time {
+        font-size: 2rem;
+        font-weight: 800;
+        color: $dkAqua;
+        margin: 0 10px;
+        @media (min-width: 768px) {
+            font-size: 4rem;
+        }
+    }
+    .cta-btn {
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.4);
+        background-color: $pink;
+        font-size: 1rem;
+        padding: 5px 20px 8px 20px;
+        &:hover {
+            background-color: $red;
+        }
+        @media(min-width: 768px) {
+            font-size: 1.5rem;
+            padding: 5px 30px 8px 30px;
+        }
+    }
 }
 .game-grid {
     //height: 100%;
@@ -75,7 +123,7 @@ body, .subheading {
     // display: grid;
     perspective: 1000px;
     max-width: 960px;
-    margin: 0 auto;
+    //margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -85,15 +133,34 @@ body, .subheading {
     // background-repeat: no-repeat;
     // background-position: center center;
 
-    height: 150px;
-    width: 150px;
-    margin: 5px;
+    height: 60px;
+    width: 60px;
+    margin: 4px;
+    border-radius: 5px;
+    // box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
 
     // height: 100%;
     // width: 100%;
     transition: 0.6s;
 	transform-style: preserve-3d;
-	position: relative;
+    position: relative;
+    @media (min-width: 576px) {
+        height: 80px;
+        width: 80px;
+        margin: 5px;
+    }
+    @media (min-width: 768px) {
+        height: 100px;
+        width: 100px;
+    }
+    @media (min-width: 1000px) {
+        height: 130px;
+        width: 130px;
+    }
+    @media (min-width: 1200px) {
+        height: 150px;
+        width: 150px;
+    }
     .back, .front {
         @extend %fill;
         backface-visibility: hidden;
@@ -101,9 +168,10 @@ body, .subheading {
         top: 0;
         left: 0;
         border-radius: 5px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
     }
     .back {
-        background-color: darkslategrey;
+        background: url('../../img/soft-circle-scales.png'), linear-gradient(45deg, $dkBlue, $blue);
         z-index: 2;
     }
     .front {

@@ -203,6 +203,9 @@ let vm = new Vue({
             this.dupCards = this.shuffle(this.dupCards);
             // rerender
             this.render();
+            // reset clock
+            this.stopTime();
+            this.clearTime();
         },
         render() {
             // map cards array

@@ -20,7 +20,7 @@ Vue.component('wasabi-char', {
                 c-14.668,24.091-15.037,58.098-12.541,64.495c2.496,6.398,11.578,28.354,59.781,26.228c48.201-2.126,52.452-20.083,53.162-26.699
                 C129.5,132,113.631,137.741,78.57,136.333C54.209,135.354,36.167,114.501,33.334,106.167z"/>
         </g>
-        <g>
+        <g class="body-flr">
             <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="94.3291" y1="64.6621" x2="107.5032" y2="37.5953">
                 <stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
                 <stop  offset="1" style="stop-color:#4E6000"/>

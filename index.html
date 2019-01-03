@@ -46,7 +46,7 @@
               <div class="text-center">
                 <wasabi-char></wasabi-char>
                 <h1>Wasabi Match</h1>
-                <h2 class="subheading mb-4">Created by VivtheFish</h2>
+                <h2 class="subheading mb-4"><img src="img/logo.svg" alt="VivtheFish Logo" width="35" /> Created by VivtheFish</h2>
                 <p>How fast can you find all the matching cards?</p>
                 <button class="btn cta-btn btn-start" @click="started = !started" >Start</button>
               </div>
@@ -62,12 +62,21 @@
 
 
       <section id="game-screen">
-        <div v-if="started" id="game-container">
-          <div class="game-misc">
-            <button @click="resetGame" >Reset</button>
-            <h2>{{ time }}</h2>
-            <button @click="stopTime" >Stop Time</button>
-            <button @click="clearTime" >clear Time</button>
+        <div id="game-container" v-cloak class="container py-4 py-md-0 d-flex flex-column justify-content-center align-items-center" v-if="started">
+          <div class="game-misc row justify-content-center pb-2">
+            <div class="col-6 col-md-3">
+              <wasabi-char></wasabi-char>
+            </div>
+            <div class="col row d-flex align-items-center justify-content-around">
+              <div class="col-12 col-sm-6 text-right">
+                <h2 v-cloak class="time d-inline-block">{{ time }}</h2>
+              </div>
+              <div class="col-12 col-sm-6 text-right">
+                <button class="btn cta-btn" @click="resetGame" >Restart</button>
+              </div>
+              <!-- <button @click="stopTime" >Stop Time</button>
+              <button @click="clearTime" >clear Time</button> -->
+            </div>
           </div><!--.game-music-->
 
           <section @click="clickCard" class="game-grid" v-html="output">
