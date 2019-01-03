@@ -1,3 +1,24 @@
+// General Styles -----------------
+h1, h2, h3, h4, h5, h6 {
+    font-family: $ceviche;
+    color: $dkAqua;
+} 
+body, .subheading {
+    font-family: $text;
+    color: #333;
+}
+.cta-btn {
+    color: white;
+    background-color: $dkBlue;
+    font-size: 1.5rem;
+    padding: 5px 30px 8px 30px;
+    border-radius: 25px;
+    transition-duration: .5s;
+    &:hover {
+        background-color: $blue;
+    }
+}
+
 // Intro Screen -------------------
 #intro-screen {
     position: absolute;
@@ -10,15 +31,35 @@
         @extend %fill;
     }
     [class*="col"] {
-        min-height: 50%;
+        min-height: 30%;
     }
     .intro-img {
-        background: linear-gradient($ltPink, $pink, $red);
+        background: url('../../img/diamond-upholstery.png'), linear-gradient($ltPink, $pink, $red);
     }
     .intro-container {
-        background-color: $offWhite;
+        background: url('../../img/subtle-white-feathers.png'), $offWhite;
         @extend %flex-col;
         @extend %flex-center;
+        z-index: 6;
+        box-shadow: 0 0 40px 0 rgba(49, 0, 0, 0.3);
+        div {
+            padding: 4rem;
+            background: radial-gradient(white, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+        }
+    }
+    h1 {
+        font-size: 4.7rem;
+        margin: 5px 0;
+        line-height: 3rem;
+    }
+    .subheading {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $aqua;
+    }
+    p {
+        font-size: 1.3rem;
     }
 }
 
@@ -33,17 +74,6 @@
     width: 100%;
     // display: grid;
     perspective: 1000px;
-    // grid-template-columns: 25%, 25%, 25%, 25%;
-    // grid-template-rows: auto;
-    // grid-column-gap: 10px;
-    // grid-row-gap: 10px;
-    // grid-template-areas: 
-    //         "one two three four"
-    //         "five six seven eight"
-    //         "nine ten eleven twelve"
-    //         "thirteen fourteen fifteen sixteen"
-    //         "seventeen eighteen nineteen twenty"
-    //         "twenty1 twenty2 twenty3 twenty4";
     max-width: 960px;
     margin: 0 auto;
     display: flex;
@@ -88,78 +118,5 @@
     &:hover {
         cursor: pointer;
     }
-
-    // &:nth-child(1) {
-    //     grid-area: one;
-    // }
-    // &:nth-child(2) {
-    //     grid-area: two;
-    // }
-    // &:nth-child(3) {
-    //     grid-area: three;
-    // }
-    // &:nth-child(4) {
-    //     grid-area: four;
-    // }
-    // &:nth-child(5) {
-    //     grid-area: five;
-    // }
-    // &:nth-child(6) {
-    //     grid-area: six;
-    // }
-    // &:nth-child(7) {
-    //     grid-area: seven;
-    // }
-    // &:nth-child(8) {
-    //     grid-area: eight;
-    // }
-    // &:nth-child(9) {
-    //     grid-area: nine;
-    // }
-    // &:nth-child(10) {
-    //     grid-area: ten;
-    // }
-    // &:nth-child(11) {
-    //     grid-area: eleven;
-    // }
-    // &:nth-child(12) {
-    //     grid-area: twelve;
-    // }
-    // &:nth-child(13) {
-    //     grid-area: thirteen;
-    // }
-    // &:nth-child(14) {
-    //     grid-area: fourteen;
-    // }
-    // &:nth-child(15) {
-    //     grid-area: fifteen;
-    // }
-    // &:nth-child(16) {
-    //     grid-area: sixteen;
-    // }
-    // &:nth-child(17) {
-    //     grid-area: seventeen;
-    // }
-    // &:nth-child(18) {
-    //     grid-area: eighteen;
-    // }
-    // &:nth-child(19) {
-    //     grid-area: nineteen;
-    // }
-    // &:nth-child(20) {
-    //     grid-area: twenty;
-    // }
-    // &:nth-child(21) {
-    //     grid-area: twenty1;
-    // }
-    // &:nth-child(22) {
-    //     grid-area: twenty2;
-    // }
-    // &:nth-child(23) {
-    //     grid-area: twenty3;
-    // }
-    // &:nth-child(24) {
-    //     grid-area: twenty4;
-    // }
 
 }

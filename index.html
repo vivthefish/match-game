@@ -43,19 +43,12 @@
           </transition>
           <transition name="intro-right" appear>
             <section v-if="!started" class="col-md intro-container">
-              <div class="p-3 text-center">
-
-
-
-
-
+              <div class="text-center">
                 <wasabi-char></wasabi-char>
-                <!-- <img src="img/wasabi-02.svg" alt=""> -->
-                <!-- <img src="https://via.placeholder.com/150" alt=""> -->
                 <h1>Wasabi Match</h1>
-                <h2>Created by VivtheFish</h2>
+                <h2 class="subheading mb-4">Created by VivtheFish</h2>
                 <p>How fast can you find all the matching cards?</p>
-                <button class="btn btn-start" @click="started = !started" >Start</button>
+                <button class="btn cta-btn btn-start" @click="started = !started" >Start</button>
               </div>
             </section>
           </transition>
