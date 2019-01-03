@@ -23,3 +23,34 @@
 .intro-right-leave {
     bottom: 0;
 }
+
+.wasabi-bounce #body {
+    transform-origin: bottom center;
+    animation: bounce 4s infinite ease-in-out;
+}
+.wasabi-bounce #face {
+    animation: bounce-face 4s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 50%, 100% {
+        transform: scale(1.1, 0.9);
+    }
+    25% {
+        transform: scale(1, 1.1) skew(5deg);
+    }
+    75% {
+        transform: scale(1, 1.1) skew(-5deg);
+    }
+}
+@keyframes bounce-face {
+    0%, 50%, 100% {
+        transform: translate(0, 7px);
+    }
+    25% {
+        transform: translate(-7px, -7px);
+    }
+    75% {
+        transform: translate(7px, -7px);
+    }
+}
