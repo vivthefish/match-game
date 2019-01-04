@@ -29,7 +29,7 @@ body, .subheading {
     left: 0;
     height: 100vh;
     width: 100vw;
-    z-index: 5;
+    z-index: 6;
     .row {
         @extend %fill;
     }
@@ -63,6 +63,37 @@ body, .subheading {
     }
     p {
         font-size: 1.3rem;
+    }
+}
+
+// Win Screen -------------------
+#win-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 5;
+    .row {
+        @extend %fill;
+    }
+    [class*="col"] {
+        min-height: 30%;
+    }
+    .intro-img {
+        background: url('../../img/diamond-upholstery.png'), linear-gradient($pink, $red);
+    }
+    .intro-container {
+        background: url('../../img/subtle-white-feathers.png'), $offWhite;
+        @extend %flex-col;
+        @extend %flex-center;
+        z-index: 6;
+        box-shadow: 0 0 40px 0 rgba(49, 0, 0, 0.3);
+        div {
+            padding: 4rem;
+            background: radial-gradient(white, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+        }
     }
 }
 
@@ -168,7 +199,7 @@ body, .subheading {
         top: 0;
         left: 0;
         border-radius: 5px;
-        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
     }
     .back {
         background: url('../../img/soft-circle-scales.png'), linear-gradient(45deg, $dkBlue, $blue);

@@ -80,15 +80,15 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-#intro-screen .row, .cart .back, .cart .front {
+#intro-screen .row, #win-screen .row, .cart .back, .cart .front {
   height: 100%;
   width: 100%; }
 
-#intro-screen .intro-container {
+#intro-screen .intro-container, #win-screen .intro-container {
   display: flex;
   flex-direction: column; }
 
-#intro-screen .intro-container {
+#intro-screen .intro-container, #win-screen .intro-container {
   justify-content: center;
   align-items: center; }
 
@@ -115,6 +115,29 @@ textarea {
 .intro-right-enter-to,
 .intro-right-leave {
   bottom: 0; }
+
+.win-top-enter-active,
+.win-top-leave-active,
+.win-btm-enter-active,
+.win-btm-leave-active {
+  transition: all .5s ease;
+  position: relative; }
+
+.win-top-enter,
+.win-top-leave-to {
+  left: -100%; }
+
+.win-top-enter-to,
+.win-top-leave {
+  left: 0; }
+
+.win-btm-enter,
+.win-btm-leave-to {
+  left: 100%; }
+
+.win-btm-enter-to,
+.win-btm-leave {
+  left: 0; }
 
 .wasabi-bounce #body {
   transform-origin: bottom center;
@@ -166,7 +189,7 @@ body, .subheading {
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 5; }
+  z-index: 6; }
   #intro-screen [class*="col"] {
     min-height: 30%; }
   #intro-screen .intro-img {
@@ -189,6 +212,26 @@ body, .subheading {
     color: #55c3ba; }
   #intro-screen p {
     font-size: 1.3rem; }
+
+#win-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 5; }
+  #win-screen [class*="col"] {
+    min-height: 30%; }
+  #win-screen .intro-img {
+    background: url("../../img/diamond-upholstery.png"), linear-gradient(#f67a82, #f24446); }
+  #win-screen .intro-container {
+    background: url("../../img/subtle-white-feathers.png"), #fbfaf5;
+    z-index: 6;
+    box-shadow: 0 0 40px 0 rgba(49, 0, 0, 0.3); }
+    #win-screen .intro-container div {
+      padding: 4rem;
+      background: radial-gradient(white, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%; }
 
 #game-screen {
   min-height: 100vh;
@@ -273,7 +316,7 @@ body, .subheading {
     top: 0;
     left: 0;
     border-radius: 5px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7); }
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); }
   .cart .back {
     background: url("../../img/soft-circle-scales.png"), linear-gradient(45deg, #3a4eb1, #4964e9);
     z-index: 2; }

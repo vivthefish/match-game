@@ -34,7 +34,7 @@
 
 
 
-      <div id="intro-screen">
+      <div id="intro-screen" class="">
         <div class="row m-0">
           <transition name="intro-left" appear  v-on:after-leave="afterIntro">
             <section v-if="!started" class="col-md intro-img">
@@ -54,6 +54,26 @@
           </transition>
         </div>
       </div><!--#intro-screen-->
+
+      <div id="win-screen" class="d-none">
+          <div class="row m-0">
+            <transition name="win-top" appear  v-on:after-leave="afterWin">
+              <section v-if="won" class="col-12 intro-container">
+                <div class="text-center">
+                  <wasabi-char></wasabi-char>
+                  <h1>You Won!</h1>
+                  <!-- <h2 class="subheading mb-4"><img src="img/logo.svg" alt="VivtheFish Logo" width="35" /> Created by VivtheFish</h2> -->
+                  <p>You are the Wasabi Match Champion!</p>
+                  <button class="btn cta-btn btn-start" @click="resetGame" >Replay</button>
+                </div>
+              </section>
+            </transition>
+            <transition name="win-btm" appear>
+              <section v-if="won" class="col-12 intro-img">
+              </section>
+            </transition>
+          </div>
+        </div><!--#win-screen-->
 
 
 

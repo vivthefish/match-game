@@ -1,3 +1,4 @@
+// Intro Screen --------------
 .intro-left-enter, 
 .intro-left-leave-to {
     top: -100%;
@@ -24,6 +25,34 @@
     bottom: 0;
 }
 
+// Win Screen ----------------
+.win-top-enter-active,
+.win-top-leave-active,
+.win-btm-enter-active,
+.win-btm-leave-active {
+    transition: all .5s ease;
+    position: relative;
+}
+
+.win-top-enter,
+.win-top-leave-to {
+    left: -100%;
+}
+.win-top-enter-to,
+.win-top-leave {
+    left: 0;
+}
+.win-btm-enter,
+.win-btm-leave-to {
+    left: 100%;
+}
+.win-btm-enter-to,
+.win-btm-leave {
+    left: 0;
+}
+
+
+// Wasabi ---------------------
 .wasabi-bounce #body {
     transform-origin: bottom center;
     animation: bounce 4s infinite ease-in-out;

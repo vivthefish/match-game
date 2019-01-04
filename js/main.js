@@ -64,6 +64,7 @@ let vm = new Vue({
     el: "#app",
     data: {
         started: false,
+        won: false,
         gameGrid: document.querySelector('.game-grid'),
         dupCards: undefined,
         count: 0,
@@ -152,15 +153,12 @@ let vm = new Vue({
                     if (this.firstGuess === this.secondGuess) {
                         // run match function
                         setTimeout(()=>{ vm.match() }, vm.delay);
-                        //vm.match();
-                        //vm.reset();
                         setTimeout(()=>{ vm.reset() }, vm.delay+800);
 
                         let unmatched = document.querySelectorAll('.cart:not(.match)');
-                        console.log(unmatched.length);
-                        //console.log(unmatched);
+
                         if(unmatched.length<3) {
-                            console.log('you won');
+                            setTimeout(()=>{ vm.wonGame() }, 1000);
                         }
 
                     } else {
@@ -192,6 +190,10 @@ let vm = new Vue({
             });
         },
         resetGame() {
+            if(this.won) {
+                this.won = false;
+                document.querySelector('#win-screen').classList.add('d-none');
+            }
             this.reset();
             let matched = document.querySelectorAll('.match');
             matched.forEach(x => {
@@ -205,6 +207,11 @@ let vm = new Vue({
             // reset clock
             this.stopTime();
             this.clearTime();
+        },
+        wonGame() {
+            document.querySelector('#win-screen').classList.remove('d-none');
+            this.won = true;
+            this.stopTime();
         },
         render() {
             // map cards array
