@@ -1,66 +1,65 @@
 const cardsArray = [
     {
         name: 'chopsticks',
-        img: '#f4dacd'
+        img: 'img/chopsticks.svg',
+        color: '#55c3ba'
     },
     {
         name: 'lotus',
-        img: '#f67a82'
+        img: 'img/lotus.svg',
+        color: '#fff9b1'
     },
     {
         name: 'monkey',
-        img: '#f24446'
+        img: 'img/monkey.svg',
+        color: '#3a4eb1'
     },    
     {
         name: 'koi',
-        img: '#ffee00'
+        img: 'img/koi.svg',
+        color: '#4964e9'
     },    
     {
         name: 'tea',
-        img: '#d7dff2'
+        img: 'img/tea.svg',
+        color: '#d8d4cb'
     },    
     {
         name: 'rice',
-        img: '#3a4eb1'
+        img: 'img/rice.svg',
+        color: '#d7dff2;'
     },
     {
         name: 'salmon sushi',
-        img: '#338c81'
+        img: 'img/salmon-sushi.svg',
+        color: 'beige'
     },
     {
         name: 'edamame',
-        img: '#55c3ba'
+        img: 'img/edamame.svg',
+        color: '#f4dacd'
     },
     {
         name: 'uramaki',
-        img: 'orange'
+        img: 'img/uramaki.svg',
+        color: '#338c81'
     },
     {
         name: 'dumpling',
-        img: 'green'
+        img: 'img/dumpling.svg',
+        color: '#f67a82'
     },
     {
         name: 'onigiri',
-        img: 'limegreen'
+        img: 'img/onigiri.svg',
+        color: 'lemonchiffon'
     },
     {
-        name: 'rice',
-        img: 'magenta'
+        name: 'maki',
+        img: 'img/maki.svg',
+        color: 'whitesmoke'
     },
 ];
-
-// const gameGrid = document.querySelector('.game-grid');
-
-// const output = cardsArray.map( (x, index) => `
-//     <div class="cart" data-name="${x.name}">
-//     <div class="back"></div>
-//     <div class="front" style="background: ${x.img}" ></div>
-//     </div>`).join("");
-
-// gameGrid.innerHTML = output;
-
-//console.log(output);
-
 let vm = new Vue({
     el: "#app",
     data: {
@@ -212,7 +211,7 @@ let vm = new Vue({
             this.output = this.dupCards.map( (x, index) => `
             <div class="cart" data-name="${this.dupCards[index].name}" >
             <div class="back"></div>
-            <div class="front" style="background: ${this.dupCards[index].img}" ></div>
+            <div class="front" style="background: url(${this.dupCards[index].img}), ${this.dupCards[index].color}" ></div>
             </div>`).join("");
         }
     }
