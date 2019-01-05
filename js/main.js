@@ -89,6 +89,17 @@ let vm = new Vue({
         // hide intro screen once they start the game
         afterIntro: function (el) {
             document.querySelector('#intro-screen').classList.add('d-none');
+            this.cardsAppear();
+        },
+        cardsAppear() {
+            var cardsEnter = [...document.querySelectorAll('.cart')];
+            cardsEnter.map(x => {
+                x.classList.remove('hide-start');
+                x.classList.add('appearing');
+                setTimeout(function() {
+                    x.classList.remove('appearing');
+                }, 1000)
+            });
         },
         add() {
             this.ms++;
@@ -204,6 +215,7 @@ let vm = new Vue({
             this.dupCards = this.shuffle(this.dupCards);
             // rerender
             this.render();
+            setTimeout(()=>{ vm.cardsAppear() }, 200);
             // reset clock
             this.stopTime();
             this.clearTime();
@@ -216,9 +228,9 @@ let vm = new Vue({
         render() {
             // map cards array
             this.output = this.dupCards.map( (x, index) => `
-            <div class="cart" data-name="${this.dupCards[index].name}" >
+            <div class="cart hide-start" data-name="${this.dupCards[index].name}" >
             <div class="back"></div>
-            <div class="front" style="background: url(${this.dupCards[index].img}), ${this.dupCards[index].color}" ></div>
+            <div class="front" style="background: url(${this.dupCards[index].img}), ${this.dupCards[index].color}; background-size: cover;" ></div>
             </div>`).join("");
         }
     }

@@ -139,6 +139,86 @@ textarea {
 .win-btm-leave {
   left: 0; }
 
+.hide-start {
+  opacity: 0;
+  transform: scale(0); }
+
+.appearing {
+  opacity: 1;
+  transform: scale(1); }
+
+.appearing:nth-child(2) {
+  transition-delay: 1s; }
+
+.appearing:nth-child(2) {
+  transition-delay: 0.1s; }
+
+.appearing:nth-child(3) {
+  transition-delay: 0.15s; }
+
+.appearing:nth-child(4) {
+  transition-delay: 0.2s; }
+
+.appearing:nth-child(5) {
+  transition-delay: 0.25s; }
+
+.appearing:nth-child(6) {
+  transition-delay: 0.3s; }
+
+.appearing:nth-child(7) {
+  transition-delay: 0.35s; }
+
+.appearing:nth-child(8) {
+  transition-delay: 0.4s; }
+
+.appearing:nth-child(9) {
+  transition-delay: 0.45s; }
+
+.appearing:nth-child(10) {
+  transition-delay: 0.5s; }
+
+.appearing:nth-child(11) {
+  transition-delay: 0.55s; }
+
+.appearing:nth-child(12) {
+  transition-delay: 0.6s; }
+
+.appearing:nth-child(13) {
+  transition-delay: 0.65s; }
+
+.appearing:nth-child(14) {
+  transition-delay: 0.7s; }
+
+.appearing:nth-child(15) {
+  transition-delay: 0.75s; }
+
+.appearing:nth-child(16) {
+  transition-delay: 0.8s; }
+
+.appearing:nth-child(17) {
+  transition-delay: 0.85s; }
+
+.appearing:nth-child(18) {
+  transition-delay: 0.9s; }
+
+.appearing:nth-child(19) {
+  transition-delay: 0.95s; }
+
+.appearing:nth-child(20) {
+  transition-delay: 1s; }
+
+.appearing:nth-child(21) {
+  transition-delay: 1.05s; }
+
+.appearing:nth-child(22) {
+  transition-delay: 1.1s; }
+
+.appearing:nth-child(23) {
+  transition-delay: 1.15s; }
+
+.appearing:nth-child(24) {
+  transition-delay: 1.2s; }
+
 .wasabi-bounce #body {
   transform-origin: bottom center;
   animation: bounce 4s infinite ease-in-out; }
@@ -292,7 +372,7 @@ body, .subheading {
   width: 60px;
   margin: 4px;
   border-radius: 5px;
-  transition: 0.6s;
+  transition: 0.5s;
   transform-style: preserve-3d;
   position: relative; }
   @media (min-width: 576px) {
@@ -318,14 +398,14 @@ body, .subheading {
     top: 0;
     left: 0;
     border-radius: 5px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5); }
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.3); }
   .cart .back {
     background: url("../../img/soft-circle-scales.png"), linear-gradient(45deg, #3a4eb1, #4964e9);
     z-index: 2; }
   .cart .front {
     transform: rotateY(180deg); }
   .cart.selected {
-    transform: rotateY(180deg) !important; }
+    transform: rotateY(180deg); }
   .cart.match {
     opacity: 0; }
   .cart:hover {
