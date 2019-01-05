@@ -202,6 +202,7 @@ a {
     .back, .front {
         @extend %fill;
         backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
         position: absolute;
         top: 0;
         left: 0;
@@ -217,9 +218,6 @@ a {
     }
     &.selected {
         transform: rotateY(180deg);
-        .front {
-            z-index: 3;
-        }
     }
     &.match {
         opacity: 0;

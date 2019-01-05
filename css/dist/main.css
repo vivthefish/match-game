@@ -403,6 +403,7 @@ a {
       width: 150px; } }
   .cart .back, .cart .front {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -415,8 +416,6 @@ a {
     transform: rotateY(180deg); }
   .cart.selected {
     transform: rotateY(180deg); }
-    .cart.selected .front {
-      z-index: 3; }
   .cart.match {
     opacity: 0; }
   .cart:hover {
