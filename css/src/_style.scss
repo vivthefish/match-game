@@ -29,6 +29,13 @@ body, .subheading {
     font-weight: 600;
     color: $aqua;
 }
+a {
+    color: $dkAqua;
+    &:hover {
+        text-decoration: none;
+        color: $blue;
+    }
+}
 
 // Intro Screen -------------------
 #intro-screen {
@@ -153,6 +160,9 @@ body, .subheading {
             padding: 5px 30px 8px 30px;
         }
     }
+    @media (min-width: 370px) {
+        width: 80%;
+    }
 }
 .game-grid {
     //height: 100%;
@@ -212,10 +222,10 @@ body, .subheading {
     }
     .back {
         background: url('../../img/soft-circle-scales.png'), linear-gradient(45deg, $dkBlue, $blue);
-        z-index: 2;
+        //z-index: 2;
     }
     .front {
-        transform: rotateY(180deg);
+        //transform: rotateY(180deg);
     }
     &.selected {
         transform: rotateY(180deg);
@@ -227,4 +237,37 @@ body, .subheading {
         cursor: pointer;
     }
 
+}
+
+// Brand --------------------
+#brand {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(251, 250, 245, 0.75);
+    border-radius: 50%;
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.3);
+    transition-duration: .5s;
+    @extend %flex-col;
+    @extend %flex-center;
+    display: none;
+    span {
+        display: none;
+    }
+    h3 {
+        font-weight: 800;
+        font-size: .9rem;
+    }
+    &:hover {
+        transform: scale(1.1);
+    }
+    @media (min-width: 370px) {
+        display: flex;
+    }
+    @media (min-width: 1000px) {
+        width: 100px;
+        height: 100px;
+    }
 }

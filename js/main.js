@@ -79,6 +79,7 @@ let vm = new Vue({
         min: 0,
         t: undefined,
         timeStart: false,
+        happy: false,
     },
     created() {
         // mix up array
@@ -162,6 +163,10 @@ let vm = new Vue({
                 if(this.firstGuess !== '' && this.secondGuess !== '') {
 
                     if (this.firstGuess === this.secondGuess) {
+                        // show happy face
+                        this.happy = true;
+                        setTimeout(()=>{ vm.happy = false }, 2000);
+
                         // run match function
                         setTimeout(()=>{ vm.match() }, vm.delay);
                         setTimeout(()=>{ vm.reset() }, vm.delay+800);

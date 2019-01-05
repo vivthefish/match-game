@@ -28,6 +28,11 @@
 
       </div><!--#load-screen-->
 
+      <a id="brand" href="https://vivian-harvey.azurewebsites.net/" title="Visit my website">
+        <img src="img/logo.svg" alt="VivtheFish Logo" width="50">
+        <h3>&copy;VivtheFish</h3>
+      </a>
+
 
 
 
@@ -44,9 +49,11 @@
           <transition name="intro-right" appear>
             <section v-if="!started" class="col-md intro-container">
               <div class="text-center">
-                <wasabi-char></wasabi-char>
+                <wasabi-char>
+                  <face-normal></face-normal>
+                </wasabi-char>
                 <h1>Wasabi Match</h1>
-                <h2 class="subheading mb-4"><img src="img/logo.svg" alt="VivtheFish Logo" width="35" /> Created by VivtheFish</h2>
+                <h2 class="subheading mb-4"><img src="img/logo.svg" alt="VivtheFish Logo" width="35" /> Created by <a href="https://vivian-harvey.azurewebsites.net/" title="Visit my website">VivtheFish</a></h2>
                 <p>How fast can you find all the matching cards?</p>
                 <button class="btn cta-btn btn-start" @click="started = !started" >Start</button>
               </div>
@@ -60,7 +67,9 @@
             <transition name="win-top" appear  v-on:after-leave="afterWin">
               <section v-if="won" class="col-12 intro-container">
                 <div class="text-center">
-                  <wasabi-char></wasabi-char>
+                  <wasabi-char>
+                    <face-happy></face-happy>
+                  </wasabi-char>
                   <h1>You Won!</h1>
                   <!-- <h2 class="subheading mb-4"><img src="img/logo.svg" alt="VivtheFish Logo" width="35" /> Created by VivtheFish</h2> -->
                   <p class="mb-1">You are the Wasabi Match Champion!</p>
@@ -86,7 +95,10 @@
         <div id="game-container" v-cloak class="container py-4 py-md-0 d-flex flex-column justify-content-center align-items-center" v-if="started">
           <div class="game-misc row justify-content-center pb-2">
             <div class="col-6 col-md-3">
-              <wasabi-char></wasabi-char>
+              <wasabi-char>
+                <face-happy v-if="happy" ></face-happy>
+                <face-normal v-else ></face-normal>
+              </wasabi-char>
             </div>
             <div class="col row d-flex align-items-center justify-content-around">
               <div class="col-12 col-sm-6 text-right">

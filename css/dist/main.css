@@ -84,11 +84,11 @@ textarea {
   height: 100%;
   width: 100%; }
 
-#intro-screen .intro-container, #win-screen .intro-container {
+#intro-screen .intro-container, #win-screen .intro-container, #brand {
   display: flex;
   flex-direction: column; }
 
-#intro-screen .intro-container, #win-screen .intro-container {
+#intro-screen .intro-container, #win-screen .intro-container, #brand {
   justify-content: center;
   align-items: center; }
 
@@ -271,6 +271,12 @@ body, .subheading {
   font-weight: 600;
   color: #55c3ba; }
 
+a {
+  color: #338c81; }
+  a:hover {
+    text-decoration: none;
+    color: #4964e9; }
+
 #intro-screen {
   position: absolute;
   top: 0;
@@ -358,6 +364,9 @@ body, .subheading {
       .game-misc .cta-btn {
         font-size: 1.5rem;
         padding: 5px 30px 8px 30px; } }
+  @media (min-width: 370px) {
+    .game-misc {
+      width: 80%; } }
 
 .game-grid {
   width: 100%;
@@ -400,16 +409,39 @@ body, .subheading {
     border-radius: 5px;
     box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.3); }
   .cart .back {
-    background: url("../../img/soft-circle-scales.png"), linear-gradient(45deg, #3a4eb1, #4964e9);
-    z-index: 2; }
-  .cart .front {
-    transform: rotateY(180deg); }
+    background: url("../../img/soft-circle-scales.png"), linear-gradient(45deg, #3a4eb1, #4964e9); }
   .cart.selected {
     transform: rotateY(180deg); }
   .cart.match {
     opacity: 0; }
   .cart:hover {
     cursor: pointer; }
+
+#brand {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(251, 250, 245, 0.75);
+  border-radius: 50%;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.3);
+  transition-duration: .5s;
+  display: none; }
+  #brand span {
+    display: none; }
+  #brand h3 {
+    font-weight: 800;
+    font-size: .9rem; }
+  #brand:hover {
+    transform: scale(1.1); }
+  @media (min-width: 370px) {
+    #brand {
+      display: flex; } }
+  @media (min-width: 1000px) {
+    #brand {
+      width: 100px;
+      height: 100px; } }
 
 /* ==========================================================================
    Helper classes
