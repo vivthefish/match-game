@@ -409,7 +409,10 @@ a {
     border-radius: 5px;
     box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.3); }
   .cart .back {
-    background: url("../../img/soft-circle-scales.png"), linear-gradient(45deg, #3a4eb1, #4964e9); }
+    background: url("../../img/soft-circle-scales.png"), linear-gradient(45deg, #3a4eb1, #4964e9);
+    z-index: 2; }
+  .cart .front {
+    transform: rotateY(180deg); }
   .cart.selected {
     transform: rotateY(180deg); }
   .cart.match {

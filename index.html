@@ -4,14 +4,13 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
+  <title>Wasabi Match | VivtheFish</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/png" href="icon.png"/>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="css/dist/main.css">
@@ -31,13 +30,7 @@
       <a id="brand" href="https://vivian-harvey.azurewebsites.net/" title="Visit my website">
         <img src="img/logo.svg" alt="VivtheFish Logo" width="50">
         <h3>&copy;VivtheFish</h3>
-      </a>
-
-
-
-
-
-
+      </a><!--#brand-->
 
       <div id="intro-screen" class="">
         <div class="row m-0">
@@ -85,12 +78,6 @@
           </div>
         </div><!--#win-screen-->
 
-
-
-
-
-
-
       <section id="game-screen">
         <div id="game-container" v-cloak class="container py-4 py-md-0 d-flex flex-column justify-content-center align-items-center" v-if="started">
           <div class="game-misc row justify-content-center pb-2">
@@ -107,17 +94,10 @@
               <div class="col-12 col-sm-6 text-right">
                 <button class="btn cta-btn" @click="resetGame" >Restart</button>
               </div>
-              <!-- <button @click="stopTime" >Stop Time</button>
-              <button @click="clearTime" >clear Time</button> -->
             </div>
           </div><!--.game-music-->
 
           <section @click="clickCard" class="game-grid" v-html="output">
-
-            <!-- <div class="cart">
-              <div class="back"></div>
-              <div class="front"></div>
-            </div> -->
 
           </section><!--.game-grid-->
 
