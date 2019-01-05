@@ -63,8 +63,7 @@
                   <wasabi-char></wasabi-char>
                   <h1>You Won!</h1>
                   <!-- <h2 class="subheading mb-4"><img src="img/logo.svg" alt="VivtheFish Logo" width="35" /> Created by VivtheFish</h2> -->
-                  <p class="mb-1">You are the Wasabi Match Champion!</p>
-                  <h2 class="subheading mb-3">Your time was {{time}}</h2>
+                  <p>You are the Wasabi Match Champion!</p>
                   <button class="btn cta-btn btn-start" @click="resetGame" >Replay</button>
                 </div>
               </section>
@@ -100,12 +99,18 @@
             </div>
           </div><!--.game-music-->
 
-          <section @click="clickCard" class="game-grid" v-html="output">
+          <!-- <section @click="clickCard" class="game-grid" v-html="output"> -->
+          <section name="card-entrance" @click="clickCard" class="game-grid">
 
-            <!-- <div class="cart">
-              <div class="back"></div>
-              <div class="front"></div>
-            </div> -->
+            <transition-group tag="section" name="card-entrance"
+            v-on:before-enter="cardBeforeEnter"
+            v-on:enter="cardEnter"
+            appear>
+              <div v-for="(card, index) in dupCards" class="cart" :class="{ selected: dupCards[index].selected }" :key="index" :data-name="card.name" :data-index="index">
+                <div class="back">{{dupCards[index]}}</div>
+                <div class="front" v-bind:style="{ background: 'url(' + card.img + '), ' + card.color }" >{{index}}{{dupCards[index]}}</div>
+              </div>
+            </transition-group>
 
           </section><!--.game-grid-->
 

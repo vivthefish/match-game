@@ -167,7 +167,10 @@ textarea {
 
 h1 {
   font-family: "Ceviche One", cursive;
-  color: #338c81; }
+  color: #338c81;
+  font-size: 4.7rem;
+  margin: 5px 0;
+  line-height: 3rem; }
 
 body, .subheading {
   font-family: "Exo 2", sans-serif;
@@ -182,6 +185,11 @@ body, .subheading {
   transition-duration: .5s; }
   .cta-btn:hover {
     background-color: #4964e9; }
+
+.subheading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #55c3ba; }
 
 #intro-screen {
   position: absolute;
@@ -202,14 +210,6 @@ body, .subheading {
       padding: 4rem;
       background: radial-gradient(white, rgba(255, 255, 255, 0) 70%);
       border-radius: 50%; }
-  #intro-screen h1 {
-    font-size: 4.7rem;
-    margin: 5px 0;
-    line-height: 3rem; }
-  #intro-screen .subheading {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #55c3ba; }
   #intro-screen p {
     font-size: 1.3rem; }
 
@@ -232,6 +232,8 @@ body, .subheading {
       padding: 4rem;
       background: radial-gradient(white, rgba(255, 255, 255, 0) 70%);
       border-radius: 50%; }
+  #win-screen .subheading {
+    font-size: 2rem; }
 
 #game-screen {
   min-height: 100vh;
@@ -323,7 +325,7 @@ body, .subheading {
   .cart .front {
     transform: rotateY(180deg); }
   .cart.selected {
-    transform: rotateY(180deg); }
+    transform: rotateY(180deg) !important; }
   .cart.match {
     opacity: 0; }
   .cart:hover {

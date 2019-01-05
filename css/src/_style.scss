@@ -5,6 +5,9 @@
 h1 {
     font-family: $ceviche;
     color: $dkAqua;
+    font-size: 4.7rem;
+    margin: 5px 0;
+    line-height: 3rem;
 } 
 body, .subheading {
     font-family: $text;
@@ -20,6 +23,11 @@ body, .subheading {
     &:hover {
         background-color: $blue;
     }
+}
+.subheading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $aqua;
 }
 
 // Intro Screen -------------------
@@ -51,16 +59,11 @@ body, .subheading {
             border-radius: 50%;
         }
     }
-    h1 {
-        font-size: 4.7rem;
-        margin: 5px 0;
-        line-height: 3rem;
-    }
-    .subheading {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: $aqua;
-    }
+    // h1 {
+    //     font-size: 4.7rem;
+    //     margin: 5px 0;
+    //     line-height: 3rem;
+    // }
     p {
         font-size: 1.3rem;
     }
@@ -94,6 +97,9 @@ body, .subheading {
             background: radial-gradient(white, rgba(255,255,255,0) 70%);
             border-radius: 50%;
         }
+    }
+    .subheading {
+        font-size: 2rem;
     }
 }
 
@@ -158,6 +164,13 @@ body, .subheading {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    // section {
+    //     height: 100%;
+    //     width: 100%;
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     justify-content: space-evenly;
+    // }
 }
 .cart {
     // background-size: contain;
@@ -209,7 +222,7 @@ body, .subheading {
         transform: rotateY(180deg);
     }
     &.selected {
-        transform: rotateY(180deg);
+        transform: rotateY(180deg) !important;
     }
     &.match {
         opacity: 0;
