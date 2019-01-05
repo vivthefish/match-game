@@ -217,6 +217,12 @@ a {
     }
     &.selected {
         transform: rotateY(180deg);
+        .front {
+            z-index: 2;
+        }
+        .back {
+            z-index: 1;
+        }
     }
     &.match {
         opacity: 0;
