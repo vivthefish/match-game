@@ -416,9 +416,7 @@ a {
   .cart.selected {
     transform: rotateY(180deg); }
     .cart.selected .front {
-      z-index: 2; }
-    .cart.selected .back {
-      z-index: 1; }
+      z-index: 3; }
   .cart.match {
     opacity: 0; }
   .cart:hover {
