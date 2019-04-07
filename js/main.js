@@ -169,7 +169,7 @@ let vm = new Vue({
 
                         // run match function
                         setTimeout(()=>{ vm.match() }, vm.delay);
-                        setTimeout(()=>{ vm.reset() }, vm.delay+800);
+                        setTimeout(()=>{ vm.reset() }, vm.delay+400);
 
                         let unmatched = document.querySelectorAll('.cart:not(.match)');
 
